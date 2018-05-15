@@ -19,12 +19,14 @@ if %IS64% == TRUE (
   set OS_ARCH=x32
 )
 
+:: https://nodejs.org/dist
 if not defined NVMW_NODEJS_ORG_MIRROR (
-  set "NVMW_NODEJS_ORG_MIRROR=https://nodejs.org/dist"
+  set "NVMW_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node"
 )
 
+:: https://iojs.org/dist
 if not defined NVMW_IOJS_ORG_MIRROR (
-  set "NVMW_IOJS_ORG_MIRROR=https://iojs.org/dist"
+  set "NVMW_IOJS_ORG_MIRROR=http://npm.taobao.org/mirrors/iojs"
 )
 
 if "%1" == "install" if not "%2" == "" (
@@ -134,7 +136,7 @@ if %NODE_TYPE% == iojs (
   if %ARCH% == x32 (
     set NODE_EXE_URL=%NVMW_NODEJS_ORG_MIRROR%/%NODE_VERSION%/node.exe
   ) else (
-    set NODE_EXE_URL=%NVMW_NODEJS_ORG_MIRROR%/%NODE_VERSION%/x64/node.exe
+    set NODE_EXE_URL=%NVMW_NODEJS_ORG_MIRROR%/%NODE_VERSION%/win-x64/node.exe
   )
 )
 

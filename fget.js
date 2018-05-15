@@ -43,8 +43,9 @@ function log(message) {
  * @param {String} filename Filename to save
  * @param {Function} callback Callback function when download is completed or failed
  */
+ /* Msxml2.XMLHTTP */
 function downloadFile(url, filename, callback) {
-  var xhr = WScript.createObject('Msxml2.XMLHTTP')
+  var xhr = WScript.createObject('Msxml2.ServerXMLHTTP') 
     , ostream = new ActiveXObject("Adodb.Stream");
 
   log('Download from ' + url + ', and save it as ' + filename);
